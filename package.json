@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "sass:watch": "sass --source-map -w styles/index.scss styles/index.css"
+    "sass:watch": "sass -w styles/exercise1.scss styles/exercise1.css"
   },
   "devDependencies": {
     "sass": "^1.69.5"
