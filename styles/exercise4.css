@@ -1,0 +1,50 @@
+.card {
+  display: grid;
+  grid-template-areas: "image" "title" "intro" "info" "button";
+  width: 300px;
+  margin: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid lightgrey;
+}
+.card__title {
+  grid-area: title;
+  margin: 20px 10px;
+  font-weight: 300;
+}
+.card__intro {
+  grid-area: intro;
+  margin: 10px 10px 20px;
+  color: grey;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 200;
+  line-height: 1.5em;
+}
+.card__info {
+  grid-area: info;
+  padding: 0 10px;
+  text-align: right;
+}
+.card__info span {
+  color: rgb(83, 209, 83);
+}
+.card__button {
+  grid-area: button;
+  margin: 0 10px 10px;
+  padding: 20px;
+  color: #fff;
+  background-color: rgb(83, 209, 83);
+  font-size: 16px;
+  border: none;
+}
+.card__button:hover {
+  cursor: pointer;
+}
+.card__image {
+  grid-area: image;
+}
+.card__image img {
+  width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=exercise4.css.map */
