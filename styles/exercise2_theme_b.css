@@ -1,0 +1,33 @@
+.container {
+  margin-left: 30px;
+}
+
+.box {
+  width: 80px;
+  height: 40px;
+  padding: 20px;
+  border: 1px solid grey;
+}
+.box__base {
+  background-color: #1338be;
+}
+.box__important {
+  background-color: #241571;
+}
+.box__warning {
+  background-color: #63c5da;
+}
+.box__shadow {
+  box-shadow: 10px 10px 10px #191919;
+}
+
+.font--principal {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+}
+.font--secondary {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+}
+
+/*# sourceMappingURL=exercise2_theme_b.css.map */

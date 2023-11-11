@@ -1,0 +1,32 @@
+.container {
+  margin-left: 30px;
+}
+
+.box {
+  width: 80px;
+  height: 40px;
+  padding: 20px;
+  border: 1px solid grey;
+}
+.box__base {
+  background-color: #d30000;
+}
+.box__important {
+  background-color: #420d09;
+}
+.box__warning {
+  background-color: #cd5c5c;
+}
+.box__shadow {
+  box-shadow: -10px 10px 10px #191919;
+}
+
+.font--principal {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.font--secondary {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=exercise2_theme_a.css.map */
