@@ -1,3 +1,165 @@
+$container1-base-color-background: red;
+$container2-base-color-background: blue;
+$container3-base-color-background: green;
+
+$base-font-color: #fff;
+$rest-font-color: grey;
+
+$amount1: 5%;
+$amount2: 10%;
+$amount3: 15%;
+$amount4: 20%;
+
+@mixin darkened-box-color($base-color, $base-color-amount) {
+  background-color: darken($color: $base-color, $amount: $base-color-amount);
+  color: $rest-font-color;
+}
+
+@mixin lightened-box-color($base-color, $base-color-amount) {
+  background-color: lighten($color: $base-color, $amount: $base-color-amount);
+  color: $rest-font-color;
+}
+
+.container-1,
+.container-2,
+.container-3 {
+  display: flex;
+  justify-content: space-evenly;
+  width: 890px;
+  margin-bottom: 10px;
+  font: {
+    family: Arial, Helvetica, sans-serif;
+    weight: 500;
+  }
+
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    padding: 4px 2px;
+    border-radius: 4px;
+
+    .color-box-text {
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+  }
+}
+
 .container-1 {
-  background-color: green;
+  .base-color {
+    background-color: $container1-base-color-background;
+    color: $base-font-color;
+  }
+
+  .darken-1 {
+    @include darkened-box-color($container1-base-color-background, $amount1);
+  }
+
+  .darken-2 {
+    @include darkened-box-color($container1-base-color-background, $amount2);
+  }
+
+  .darken-3 {
+    @include darkened-box-color($container1-base-color-background, $amount3);
+  }
+
+  .darken-4 {
+    @include darkened-box-color($container1-base-color-background, $amount4);
+  }
+
+  .lighten-1 {
+    @include lightened-box-color($container1-base-color-background, $amount1);
+  }
+
+  .lighten-2 {
+    @include lightened-box-color($container1-base-color-background, $amount2);
+  }
+
+  .lighten-3 {
+    @include lightened-box-color($container1-base-color-background, $amount3);
+  }
+
+  .lighten-4 {
+    @include lightened-box-color($container1-base-color-background, $amount4);
+  }
+}
+
+.container-2 {
+  .base-color {
+    background-color: $container2-base-color-background;
+    color: $base-font-color;
+  }
+
+  .darken-1 {
+    @include darkened-box-color($container2-base-color-background, $amount1);
+  }
+
+  .darken-2 {
+    @include darkened-box-color($container2-base-color-background, $amount2);
+  }
+
+  .darken-3 {
+    @include darkened-box-color($container2-base-color-background, $amount3);
+  }
+
+  .darken-4 {
+    @include darkened-box-color($container2-base-color-background, $amount4);
+  }
+
+  .lighten-1 {
+    @include lightened-box-color($container2-base-color-background, $amount1);
+  }
+
+  .lighten-2 {
+    @include lightened-box-color($container2-base-color-background, $amount2);
+  }
+
+  .lighten-3 {
+    @include lightened-box-color($container2-base-color-background, $amount3);
+  }
+
+  .lighten-4 {
+    @include lightened-box-color($container2-base-color-background, $amount4);
+  }
+}
+
+.container-3 {
+  .base-color {
+    background-color: $container3-base-color-background;
+    color: $base-font-color;
+  }
+
+  .darken-1 {
+    @include darkened-box-color($container3-base-color-background, $amount1);
+  }
+
+  .darken-2 {
+    @include darkened-box-color($container3-base-color-background, $amount2);
+  }
+
+  .darken-3 {
+    @include darkened-box-color($container3-base-color-background, $amount3);
+  }
+
+  .darken-4 {
+    @include darkened-box-color($container3-base-color-background, $amount4);
+  }
+
+  .lighten-1 {
+    @include lightened-box-color($container3-base-color-background, $amount1);
+  }
+
+  .lighten-2 {
+    @include lightened-box-color($container3-base-color-background, $amount2);
+  }
+
+  .lighten-3 {
+    @include lightened-box-color($container3-base-color-background, $amount3);
+  }
+
+  .lighten-4 {
+    @include lightened-box-color($container3-base-color-background, $amount4);
+  }
 }
