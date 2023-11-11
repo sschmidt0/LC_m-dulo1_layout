@@ -1,0 +1,53 @@
+$background-color: #016064;
+$active-color: #022d36;
+$hover-color: #48aaad;
+
+.container {
+  margin: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  &__title {
+    font-weight: 600;
+    font-size: 20px;
+  }
+}
+
+.nav {
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: $background-color;
+  }
+
+  li {
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+
+    &:hover {
+      background-color: $hover-color;
+      cursor: pointer;
+    }
+  }
+
+  .active {
+    background-color: $active-color;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  .nav {
+    ul {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
