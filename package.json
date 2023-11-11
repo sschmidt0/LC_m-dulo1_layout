@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "sass:watch": "sass -w styles/exercise1.scss styles/exercise1.css"
+    "sass:watch": "sass -w styles/exercise3.scss styles/exercise3.css"
   },
   "devDependencies": {
     "sass": "^1.69.5"
