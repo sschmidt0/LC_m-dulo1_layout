@@ -1,14 +1,21 @@
-$container1-base-color-background: red;
-$container2-base-color-background: blue;
-$container3-base-color-background: green;
+@use "sass:map";
 
 $base-font-color: #fff;
 $rest-font-color: grey;
+$color-box-text: rgba(255, 255, 255, 0.03);
 
-$amount1: 5%;
-$amount2: 10%;
-$amount3: 15%;
-$amount4: 20%;
+$container-base-color-background: (
+  "container1": red,
+  "container2": blue,
+  "container3": green
+);
+
+$amount: (
+  "amount1": 5%,
+  "amount2": 10%,
+  "amount3": 15%,
+  "amount4": 20%
+);
 
 @mixin darkened-box-color($base-color, $base-color-amount) {
   background-color: darken($color: $base-color, $amount: $base-color-amount);
@@ -20,9 +27,25 @@ $amount4: 20%;
   color: $rest-font-color;
 }
 
-.container-1,
-.container-2,
-.container-3 {
+@mixin set-colors($base-color) {
+  .base-color {
+    background-color: $base-color;
+    color: $base-font-color;
+  }
+
+  @for $i from 1 through 4 {
+    $get-amount: map.get($amount, "amount#{$i}");
+
+    .darken-#{$i} {
+      @include darkened-box-color($base-color, $get-amount);
+    }
+    .lighten-#{$i} {
+      @include lightened-box-color($base-color, $get-amount);
+    }
+  }
+}
+
+.container {
   display: flex;
   justify-content: space-evenly;
   width: 890px;
@@ -42,124 +65,16 @@ $amount4: 20%;
     border-radius: 4px;
 
     .color-box-text {
-      background-color: rgba(255, 255, 255, 0.03);
+      background-color: $color-box-text;
     }
   }
 }
 
-.container-1 {
-  .base-color {
-    background-color: $container1-base-color-background;
-    color: $base-font-color;
-  }
+/* I usually wouldn't use a for loop here but apply the styles selecting '.container1' etc. The for loop here is used on purpose for the sake of the exercise. */
+@for $i from 1 through 3 {
+  $get-base-color: map.get($container-base-color-background, "container#{$i}");
 
-  .darken-1 {
-    @include darkened-box-color($container1-base-color-background, $amount1);
-  }
-
-  .darken-2 {
-    @include darkened-box-color($container1-base-color-background, $amount2);
-  }
-
-  .darken-3 {
-    @include darkened-box-color($container1-base-color-background, $amount3);
-  }
-
-  .darken-4 {
-    @include darkened-box-color($container1-base-color-background, $amount4);
-  }
-
-  .lighten-1 {
-    @include lightened-box-color($container1-base-color-background, $amount1);
-  }
-
-  .lighten-2 {
-    @include lightened-box-color($container1-base-color-background, $amount2);
-  }
-
-  .lighten-3 {
-    @include lightened-box-color($container1-base-color-background, $amount3);
-  }
-
-  .lighten-4 {
-    @include lightened-box-color($container1-base-color-background, $amount4);
-  }
-}
-
-.container-2 {
-  .base-color {
-    background-color: $container2-base-color-background;
-    color: $base-font-color;
-  }
-
-  .darken-1 {
-    @include darkened-box-color($container2-base-color-background, $amount1);
-  }
-
-  .darken-2 {
-    @include darkened-box-color($container2-base-color-background, $amount2);
-  }
-
-  .darken-3 {
-    @include darkened-box-color($container2-base-color-background, $amount3);
-  }
-
-  .darken-4 {
-    @include darkened-box-color($container2-base-color-background, $amount4);
-  }
-
-  .lighten-1 {
-    @include lightened-box-color($container2-base-color-background, $amount1);
-  }
-
-  .lighten-2 {
-    @include lightened-box-color($container2-base-color-background, $amount2);
-  }
-
-  .lighten-3 {
-    @include lightened-box-color($container2-base-color-background, $amount3);
-  }
-
-  .lighten-4 {
-    @include lightened-box-color($container2-base-color-background, $amount4);
-  }
-}
-
-.container-3 {
-  .base-color {
-    background-color: $container3-base-color-background;
-    color: $base-font-color;
-  }
-
-  .darken-1 {
-    @include darkened-box-color($container3-base-color-background, $amount1);
-  }
-
-  .darken-2 {
-    @include darkened-box-color($container3-base-color-background, $amount2);
-  }
-
-  .darken-3 {
-    @include darkened-box-color($container3-base-color-background, $amount3);
-  }
-
-  .darken-4 {
-    @include darkened-box-color($container3-base-color-background, $amount4);
-  }
-
-  .lighten-1 {
-    @include lightened-box-color($container3-base-color-background, $amount1);
-  }
-
-  .lighten-2 {
-    @include lightened-box-color($container3-base-color-background, $amount2);
-  }
-
-  .lighten-3 {
-    @include lightened-box-color($container3-base-color-background, $amount3);
-  }
-
-  .lighten-4 {
-    @include lightened-box-color($container3-base-color-background, $amount4);
+  .container-#{$i} {
+    @include set-colors($get-base-color);
   }
 }
