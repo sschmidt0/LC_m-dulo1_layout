@@ -1,4 +1,4 @@
-.container {
+.container:nth-child(1) {
   display: flex;
   justify-content: space-evenly;
   width: 890px;
@@ -6,7 +6,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 500;
 }
-.container .box {
+.container:nth-child(1) .box {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,121 +14,129 @@
   height: 80px;
   padding: 4px 2px;
   border-radius: 4px;
+  color: grey;
 }
-.container .box .color-box-text {
-  background-color: rgba(255, 255, 255, 0.03);
-}
-
-/* I usually wouldn't use a for loop here but apply the styles selecting '.container1' etc. The for loop here is used on purpose for the sake of the exercise. */
-.container-1 .base-color {
+.container:nth-child(1) .base-color {
+  color: #fff;
   background-color: red;
-  color: #fff;
 }
-.container-1 .darken-1 {
+.container:nth-child(1) .darken-1 {
   background-color: #e60000;
-  color: grey;
 }
-.container-1 .lighten-1 {
+.container:nth-child(1) .lighten-1 {
   background-color: #ff1a1a;
-  color: grey;
 }
-.container-1 .darken-2 {
+.container:nth-child(1) .darken-2 {
   background-color: #cc0000;
-  color: grey;
 }
-.container-1 .lighten-2 {
+.container:nth-child(1) .lighten-2 {
   background-color: #ff3333;
-  color: grey;
 }
-.container-1 .darken-3 {
+.container:nth-child(1) .darken-3 {
   background-color: #b30000;
-  color: grey;
 }
-.container-1 .lighten-3 {
+.container:nth-child(1) .lighten-3 {
   background-color: #ff4d4d;
-  color: grey;
 }
-.container-1 .darken-4 {
+.container:nth-child(1) .darken-4 {
   background-color: #990000;
-  color: grey;
 }
-.container-1 .lighten-4 {
+.container:nth-child(1) .lighten-4 {
   background-color: #ff6666;
-  color: grey;
 }
 
-.container-2 .base-color {
+.container:nth-child(2) {
+  display: flex;
+  justify-content: space-evenly;
+  width: 890px;
+  margin-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+.container:nth-child(2) .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  padding: 4px 2px;
+  border-radius: 4px;
+  color: grey;
+}
+.container:nth-child(2) .base-color {
+  color: #fff;
   background-color: blue;
-  color: #fff;
 }
-.container-2 .darken-1 {
+.container:nth-child(2) .darken-1 {
   background-color: #0000e6;
-  color: grey;
 }
-.container-2 .lighten-1 {
+.container:nth-child(2) .lighten-1 {
   background-color: #1a1aff;
-  color: grey;
 }
-.container-2 .darken-2 {
+.container:nth-child(2) .darken-2 {
   background-color: #0000cc;
-  color: grey;
 }
-.container-2 .lighten-2 {
+.container:nth-child(2) .lighten-2 {
   background-color: #3333ff;
-  color: grey;
 }
-.container-2 .darken-3 {
+.container:nth-child(2) .darken-3 {
   background-color: #0000b3;
-  color: grey;
 }
-.container-2 .lighten-3 {
+.container:nth-child(2) .lighten-3 {
   background-color: #4d4dff;
-  color: grey;
 }
-.container-2 .darken-4 {
+.container:nth-child(2) .darken-4 {
   background-color: #000099;
-  color: grey;
 }
-.container-2 .lighten-4 {
+.container:nth-child(2) .lighten-4 {
   background-color: #6666ff;
-  color: grey;
 }
 
-.container-3 .base-color {
-  background-color: green;
+.container:nth-child(3) {
+  display: flex;
+  justify-content: space-evenly;
+  width: 890px;
+  margin-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+.container:nth-child(3) .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  padding: 4px 2px;
+  border-radius: 4px;
+  color: grey;
+}
+.container:nth-child(3) .base-color {
   color: #fff;
+  background-color: green;
 }
-.container-3 .darken-1 {
+.container:nth-child(3) .darken-1 {
   background-color: #006700;
-  color: grey;
 }
-.container-3 .lighten-1 {
+.container:nth-child(3) .lighten-1 {
   background-color: #009a00;
-  color: grey;
 }
-.container-3 .darken-2 {
+.container:nth-child(3) .darken-2 {
   background-color: #004d00;
-  color: grey;
 }
-.container-3 .lighten-2 {
+.container:nth-child(3) .lighten-2 {
   background-color: #00b300;
-  color: grey;
 }
-.container-3 .darken-3 {
+.container:nth-child(3) .darken-3 {
   background-color: #003400;
-  color: grey;
 }
-.container-3 .lighten-3 {
+.container:nth-child(3) .lighten-3 {
   background-color: #00cd00;
-  color: grey;
 }
-.container-3 .darken-4 {
+.container:nth-child(3) .darken-4 {
   background-color: #001a00;
-  color: grey;
 }
-.container-3 .lighten-4 {
+.container:nth-child(3) .lighten-4 {
   background-color: #00e600;
-  color: grey;
 }
 
 /*# sourceMappingURL=exercise1.css.map */

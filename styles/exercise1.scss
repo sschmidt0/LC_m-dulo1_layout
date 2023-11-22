@@ -1,80 +1,45 @@
-@use "sass:map";
+@use "sass:list";
 
 $base-font-color: #fff;
 $rest-font-color: grey;
 $color-box-text: rgba(255, 255, 255, 0.03);
+$background-colors: (red, blue, green);
 
-$container-base-color-background: (
-  "container1": red,
-  "container2": blue,
-  "container3": green
-);
-
-$amount: (
-  "amount1": 5%,
-  "amount2": 10%,
-  "amount3": 15%,
-  "amount4": 20%
-);
-
-@mixin darkened-box-color($base-color, $base-color-amount) {
-  background-color: darken($color: $base-color, $amount: $base-color-amount);
-  color: $rest-font-color;
-}
-
-@mixin lightened-box-color($base-color, $base-color-amount) {
-  background-color: lighten($color: $base-color, $amount: $base-color-amount);
-  color: $rest-font-color;
-}
-
-@mixin set-colors($base-color) {
-  .base-color {
-    background-color: $base-color;
-    color: $base-font-color;
-  }
-
-  @for $i from 1 through 4 {
-    $get-amount: map.get($amount, "amount#{$i}");
-
-    .darken-#{$i} {
-      @include darkened-box-color($base-color, $get-amount);
-    }
-    .lighten-#{$i} {
-      @include lightened-box-color($base-color, $get-amount);
-    }
-  }
-}
-
-.container {
-  display: flex;
-  justify-content: space-evenly;
-  width: 890px;
-  margin-bottom: 10px;
-  font: {
-    family: Arial, Helvetica, sans-serif;
-    weight: 500;
-  }
-
-  .box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80px;
-    height: 80px;
-    padding: 4px 2px;
-    border-radius: 4px;
-
-    .color-box-text {
-      background-color: $color-box-text;
-    }
-  }
-}
-
-/* I usually wouldn't use a for loop here but apply the styles selecting '.container1' etc. The for loop here is used on purpose for the sake of the exercise. */
 @for $i from 1 through 3 {
-  $get-base-color: map.get($container-base-color-background, "container#{$i}");
+  .container:nth-child(#{$i}) {
+    display: flex;
+    justify-content: space-evenly;
+    width: 890px;
+    margin-bottom: 10px;
+    font: {
+      family: Arial, Helvetica, sans-serif;
+      weight: 500;
+    }
 
-  .container-#{$i} {
-    @include set-colors($get-base-color);
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80px;
+      height: 80px;
+      padding: 4px 2px;
+      border-radius: 4px;
+      color: $rest-font-color;
+    }
+
+    .base-color {
+      color: $base-font-color;
+      background-color: list.nth($background-colors, $i);
+    }
+
+    @for $j from 1 through 4 {
+      .darken-#{$j} {
+        background-color: darken(list.nth($background-colors, $i), $j * 5);
+      }
+
+      .lighten-#{$j} {
+        background-color: lighten(list.nth($background-colors, $i), $j * 5);
+      }
+    }
   }
 }
