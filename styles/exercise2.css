@@ -9,24 +9,24 @@
   border: 1px solid grey;
 }
 .box__base {
-  background-color: #d30000;
+  background-color: #1338be;
 }
 .box__important {
-  background-color: #420d09;
+  background-color: #241571;
 }
 .box__warning {
-  background-color: #cd5c5c;
+  background-color: #63c5da;
 }
 .box__shadow {
   box-shadow: -10px 10px 10px #191919;
 }
 
 .font--principal {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
 .font--secondary {
   font-family: "Courier New", Courier, monospace;
   font-weight: 600;
 }
 
-/*# sourceMappingURL=exercise2_theme_a.css.map */
+/*# sourceMappingURL=exercise2.css.map */
